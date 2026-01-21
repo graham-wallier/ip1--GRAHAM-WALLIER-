@@ -345,4 +345,338 @@ public class AppTest
         assertEquals("Player 2 should have score 6", 6, game.getPlayer2().getScore());
         assertEquals("Player 1 should be the winner", game.getPlayer1(), game.determineWinner());
     }
+
+    // ============= ADDITIONAL EDGE CASE TESTS =============
+
+    /**
+     * Test Player toString() method format
+     */
+    @Test
+    public void testPlayerToString()
+    {
+        Player player = new Player("Alice");
+        player.addScore(25);
+        String result = player.toString();
+        assertTrue("toString should contain player name", result.contains("Alice"));
+        assertTrue("toString should contain score", result.contains("25"));
+    }
+
+    /**
+     * Test Player toString() with zero score
+     */
+    @Test
+    public void testPlayerToStringZeroScore()
+    {
+        Player player = new Player("Bob");
+        String result = player.toString();
+        assertTrue("toString should contain player name", result.contains("Bob"));
+        assertTrue("toString should contain 0 score", result.contains("0"));
+    }
+
+    /**
+     * Test adding score of 1 (minimum die value)
+     */
+    @Test
+    public void testPlayerAddScoreMinimum()
+    {
+        Player player = new Player("TestPlayer");
+        player.addScore(1);
+        assertEquals("Score should be 1", 1, player.getScore());
+    }
+
+    /**
+     * Test adding score of 6 (maximum die value)
+     */
+    @Test
+    public void testPlayerAddScoreMaximum()
+    {
+        Player player = new Player("TestPlayer");
+        player.addScore(6);
+        assertEquals("Score should be 6", 6, player.getScore());
+    }
+
+    /**
+     * Test adding score of 0
+     */
+    @Test
+    public void testPlayerAddScoreZero()
+    {
+        Player player = new Player("TestPlayer");
+        player.addScore(0);
+        assertEquals("Score should remain 0", 0, player.getScore());
+    }
+
+    /**
+     * Test adding large scores
+     */
+    @Test
+    public void testPlayerAddScoreLarge()
+    {
+        Player player = new Player("TestPlayer");
+        player.addScore(100);
+        assertEquals("Score should be 100", 100, player.getScore());
+    }
+
+    /**
+     * Test player with very high accumulated score
+     */
+    @Test
+    public void testPlayerHighScore()
+    {
+        Player player = new Player("TestPlayer");
+        for (int i = 0; i < 10; i++)
+        {
+            player.addScore(6); // Max die value
+        }
+        assertEquals("Score should be 60 after 10 rolls of 6", 60, player.getScore());
+    }
+
+    /**
+     * Test rollDie distribution includes all values 1-6
+     */
+    @Test
+    public void testRollDieAllValuesAppear()
+    {
+        boolean[] values = new boolean[7]; // Index 0 unused, 1-6 for die values
+        
+        // Roll enough times to likely see all values
+        for (int i = 0; i < 1000; i++)
+        {
+            int value = game.rollDie();
+            values[value] = true;
+        }
+        
+        // Check all values 1-6 appeared at least once
+        for (int i = 1; i <= 6; i++)
+        {
+            assertTrue("Die value " + i + " should appear in 1000 rolls", values[i]);
+        }
+    }
+
+    /**
+     * Test determineWinner with Player 1 having significantly higher score
+     */
+    @Test
+    public void testDetermineWinnerLargeMargin()
+    {
+        game.getPlayer1().addScore(50);
+        game.getPlayer2().addScore(10);
+        
+        Player winner = game.determineWinner();
+        assertEquals("Player 1 should win with large margin", game.getPlayer1(), winner);
+    }
+
+    /**
+     * Test determineWinner with Player 2 winning by 1 point
+     */
+    @Test
+    public void testDetermineWinnerSmallMargin()
+    {
+        game.getPlayer1().addScore(20);
+        game.getPlayer2().addScore(21);
+        
+        Player winner = game.determineWinner();
+        assertEquals("Player 2 should win by 1 point", game.getPlayer2(), winner);
+    }
+
+    /**
+     * Test multiple resets on same player
+     */
+    @Test
+    public void testPlayerMultipleResets()
+    {
+        Player player = new Player("TestPlayer");
+        player.addScore(10);
+        player.resetScore();
+        assertEquals("Score should be 0 after first reset", 0, player.getScore());
+        
+        player.addScore(5);
+        player.resetScore();
+        assertEquals("Score should be 0 after second reset", 0, player.getScore());
+    }
+
+    /**
+     * Test player name with empty string
+     */
+    @Test
+    public void testPlayerEmptyName()
+    {
+        Player player = new Player("");
+        assertEquals("Empty name should be stored", "", player.getName());
+    }
+
+    /**
+     * Test player name with special characters
+     */
+    @Test
+    public void testPlayerNameSpecialCharacters()
+    {
+        Player player = new Player("Player-1!");
+        assertEquals("Name with special chars should be stored", "Player-1!", player.getName());
+    }
+
+    /**
+     * Test player name with long string
+     */
+    @Test
+    public void testPlayerLongName()
+    {
+        String longName = "VeryLongPlayerNameWithManyCharacters";
+        Player player = new Player(longName);
+        assertEquals("Long name should be stored", longName, player.getName());
+    }
+
+    /**
+     * Test score accumulation pattern simulating 10 turns
+     */
+    @Test
+    public void testPlayerFullGameScoreAccumulation()
+    {
+        Player player = new Player("TestPlayer");
+        int[] rolls = {3, 5, 2, 6, 4, 1, 5, 3, 6, 2}; // 10 turns
+        int expectedTotal = 0;
+        
+        for (int roll : rolls)
+        {
+            player.addScore(roll);
+            expectedTotal += roll;
+        }
+        
+        assertEquals("Total score should match sum of all rolls", expectedTotal, player.getScore());
+    }
+
+    /**
+     * Test getCurrentDieValue initial state
+     */
+    @Test
+    public void testGetCurrentDieValueInitial()
+    {
+        DiceGame newGame = new DiceGame();
+        assertEquals("Initial die value should be 0", 0, newGame.getCurrentDieValue());
+    }
+
+    /**
+     * Test that two dice games are independent
+     */
+    @Test
+    public void testMultipleDiceGamesIndependent()
+    {
+        DiceGame game1 = new DiceGame();
+        DiceGame game2 = new DiceGame();
+        
+        game1.getPlayer1().addScore(10);
+        game2.getPlayer1().addScore(20);
+        
+        assertEquals("Game 1 player 1 should have score 10", 10, game1.getPlayer1().getScore());
+        assertEquals("Game 2 player 1 should have score 20", 20, game2.getPlayer1().getScore());
+    }
+
+    /**
+     * Test determineWinner with maximum possible scores
+     */
+    @Test
+    public void testDetermineWinnerMaxScores()
+    {
+        game.getPlayer1().addScore(60); // 10 turns * 6
+        game.getPlayer2().addScore(59);
+        
+        Player winner = game.determineWinner();
+        assertEquals("Player 1 should win with max possible score", game.getPlayer1(), winner);
+    }
+
+    /**
+     * Test determineWinner with minimum possible scores (both zero)
+     */
+    @Test
+    public void testDetermineWinnerMinScores()
+    {
+        Player winner = game.determineWinner();
+        assertNull("Should be tie when both have 0", winner);
+    }
+
+    /**
+     * Test player names are correctly initialized in DiceGame
+     */
+    @Test
+    public void testDiceGamePlayerNames()
+    {
+        assertNotNull("Player 1 should have a name", game.getPlayer1().getName());
+        assertNotNull("Player 2 should have a name", game.getPlayer2().getName());
+    }
+
+    /**
+     * Test score immutability through getName (getName shouldn't affect score)
+     */
+    @Test
+    public void testPlayerGetNameDoesNotAffectScore()
+    {
+        Player player = new Player("Alice");
+        player.addScore(10);
+        String name = player.getName();
+        assertEquals("Score should remain unchanged after getName", 10, player.getScore());
+        assertEquals("Name should be Alice", "Alice", name);
+    }
+
+    /**
+     * Test consecutive rolls produce values in valid range
+     */
+    @Test
+    public void testConsecutiveRollsValid()
+    {
+        int roll1 = game.rollDie();
+        int roll2 = game.rollDie();
+        int roll3 = game.rollDie();
+        
+        assertTrue("First roll should be 1-6", roll1 >= 1 && roll1 <= 6);
+        assertTrue("Second roll should be 1-6", roll2 >= 1 && roll2 <= 6);
+        assertTrue("Third roll should be 1-6", roll3 >= 1 && roll3 <= 6);
+    }
+
+    /**
+     * Test winner determination after reset
+     */
+    @Test
+    public void testDetermineWinnerAfterReset()
+    {
+        game.getPlayer1().addScore(20);
+        game.getPlayer2().addScore(30);
+        
+        game.getPlayer1().resetScore();
+        game.getPlayer2().resetScore();
+        
+        Player winner = game.determineWinner();
+        assertNull("Should be tie after both scores reset to 0", winner);
+    }
+
+    /**
+     * Test setCurrentDieValue with various values
+     */
+    @Test
+    public void testSetCurrentDieValue()
+    {
+        game.setCurrentDieValue(3);
+        assertEquals("Should store value 3", 3, game.getCurrentDieValue());
+        
+        game.setCurrentDieValue(6);
+        assertEquals("Should store value 6", 6, game.getCurrentDieValue());
+        
+        game.setCurrentDieValue(1);
+        assertEquals("Should store value 1", 1, game.getCurrentDieValue());
+    }
+
+    /**
+     * Test Player class with same names are different instances
+     */
+    @Test
+    public void testPlayersDifferentInstances()
+    {
+        Player p1 = new Player("Test");
+        Player p2 = new Player("Test");
+        
+        p1.addScore(10);
+        p2.addScore(20);
+        
+        assertEquals("Player 1 should have score 10", 10, p1.getScore());
+        assertEquals("Player 2 should have score 20", 20, p2.getScore());
+    }
 }

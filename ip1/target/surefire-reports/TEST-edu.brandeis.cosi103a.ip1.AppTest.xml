@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.brandeis.cosi103a.ip1.AppTest" time="0.043" tests="24" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.brandeis.cosi103a.ip1.AppTest" time="0.057" tests="49" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/local/sdkman/candidates/java/25.0.1-ms/lib"/>
-    <property name="sun.java.command" value="/workspaces/ip1--GRAHAM-WALLIER-/ip1/target/surefire/surefirebooter11069577237334028118.jar /workspaces/ip1--GRAHAM-WALLIER-/ip1/target/surefire 2026-01-21T01-32-15_366-jvmRun1 surefire7154695315663217557tmp surefire_013536702657958726588tmp"/>
+    <property name="sun.java.command" value="/workspaces/ip1--GRAHAM-WALLIER-/ip1/target/surefire/surefirebooter3296433105912688197.jar /workspaces/ip1--GRAHAM-WALLIER-/ip1/target/surefire 2026-01-21T01-38-56_715-jvmRun1 surefire12209633757587430589tmp surefire_013332042481690887782tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/workspaces/ip1--GRAHAM-WALLIER-/ip1/target/test-classes:/workspaces/ip1--GRAHAM-WALLIER-/ip1/target/classes:/home/vscode/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/vscode/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/workspaces/ip1--GRAHAM-WALLIER-/ip1/target/surefire/surefirebooter11069577237334028118.jar"/>
+    <property name="surefire.real.class.path" value="/workspaces/ip1--GRAHAM-WALLIER-/ip1/target/surefire/surefirebooter3296433105912688197.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25.0.1+8-LTS"/>
     <property name="user.name" value="vscode"/>
@@ -55,8 +55,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="testPlayerAddScore" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.003"/>
+  <testcase name="testPlayerAddScore" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.004"/>
+  <testcase name="testDetermineWinnerMinScores" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
   <testcase name="testPlayerInitialization" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testPlayersDifferentInstances" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
+  <testcase name="testDetermineWinnerAfterReset" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testPlayerGetNameDoesNotAffectScore" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
   <testcase name="testDiceGameRollDie" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testPlayerResetScoreAfterMultipleAdditions" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
   <testcase name="testDetermineWinnerPlayer1Wins" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
@@ -64,19 +68,40 @@
   <testcase name="testPlayerAddScoreAccumulates" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testPlayerAddScoreDifferentValues" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testRollDieMultipleTimes" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.002"/>
-  <testcase name="testGetPlayer1" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
-  <testcase name="testGetPlayer2" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
+  <testcase name="testRollDieAllValuesAppear" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
+  <testcase name="testPlayerToStringZeroScore" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.002"/>
+  <testcase name="testGetPlayer1" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
+  <testcase name="testGetPlayer2" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testGetCurrentDieValue" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testDetermineWinnerTie" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testDetermineWinnerTieHighScores" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
-  <testcase name="testGetPlayersAreDifferent" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
-  <testcase name="testPlayerGetName" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
-  <testcase name="testPlayerResetScore" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testGetPlayersAreDifferent" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
+  <testcase name="testPlayerGetName" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testMultipleDiceGamesIndependent" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
+  <testcase name="testConsecutiveRollsValid" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testPlayerResetScore" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
   <testcase name="testComplexGameScenario" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testRollDieRandomness" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testPlayerNameSpecialCharacters" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
+  <testcase name="testDetermineWinnerLargeMargin" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testPlayerAddScoreMaximum" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testSetCurrentDieValue" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
+  <testcase name="testPlayerAddScoreMinimum" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testPlayerEmptyName" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
   <testcase name="testPlayerScoreAfterReset" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
-  <testcase name="testDiceGameRollDieMultiple" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.002"/>
+  <testcase name="testDiceGameRollDieMultiple" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.003"/>
+  <testcase name="testPlayerAddScoreLarge" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testDetermineWinnerSmallMargin" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
   <testcase name="testPlayerGetScoreInitial" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testPlayerMultipleResets" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testDiceGamePlayerNames" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testPlayerLongName" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testPlayerFullGameScoreAccumulation" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
+  <testcase name="testPlayerAddScoreZero" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testGetCurrentDieValueInitial" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testPlayerHighScore" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testDetermineWinnerMaxScores" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
   <testcase name="testDetermineWinnerBothZeroScore" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
-  <testcase name="testRollDieReturnsValidValue" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
+  <testcase name="testPlayerToString" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testRollDieReturnsValidValue" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
 </testsuite>
