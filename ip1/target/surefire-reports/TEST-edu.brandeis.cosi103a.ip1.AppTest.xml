@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.brandeis.cosi103a.ip1.AppTest" time="0.069" tests="45" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.brandeis.cosi103a.ip1.AppTest" time="0.059" tests="45" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/workspaces/ip1--GRAHAM-WALLIER-/ip2/target/test-classes:/workspaces/ip1--GRAHAM-WALLIER-/ip2/target/classes:/home/vscode/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/vscode/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="java.class.path" value="/workspaces/ip1--GRAHAM-WALLIER-/ip1/target/test-classes:/workspaces/ip1--GRAHAM-WALLIER-/ip1/target/classes:/home/vscode/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/vscode/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="java.vm.vendor" value="Microsoft"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://www.microsoft.com"/>
@@ -12,9 +12,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/local/sdkman/candidates/java/25.0.1-ms/lib"/>
-    <property name="sun.java.command" value="/workspaces/ip1--GRAHAM-WALLIER-/ip2/target/surefire/surefirebooter8855188733389628054.jar /workspaces/ip1--GRAHAM-WALLIER-/ip2/target/surefire 2026-01-27T21-10-52_123-jvmRun1 surefire10914684319143751833tmp surefire_07994954095797150648tmp"/>
+    <property name="sun.java.command" value="/workspaces/ip1--GRAHAM-WALLIER-/ip1/target/surefire/surefirebooter17855913424747577421.jar /workspaces/ip1--GRAHAM-WALLIER-/ip1/target/surefire 2026-01-27T21-32-50_537-jvmRun1 surefire16607774255410367536tmp surefire_06169750748354683771tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/workspaces/ip1--GRAHAM-WALLIER-/ip2/target/test-classes:/workspaces/ip1--GRAHAM-WALLIER-/ip2/target/classes:/home/vscode/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/vscode/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="surefire.test.class.path" value="/workspaces/ip1--GRAHAM-WALLIER-/ip1/target/test-classes:/workspaces/ip1--GRAHAM-WALLIER-/ip1/target/classes:/home/vscode/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/vscode/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/vscode"/>
     <property name="user.language" value="en"/>
@@ -22,12 +22,12 @@
     <property name="java.version.date" value="2025-10-21"/>
     <property name="java.home" value="/usr/local/sdkman/candidates/java/25.0.1-ms"/>
     <property name="file.separator" value="/"/>
-    <property name="basedir" value="/workspaces/ip1--GRAHAM-WALLIER-/ip2"/>
+    <property name="basedir" value="/workspaces/ip1--GRAHAM-WALLIER-/ip1"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/workspaces/ip1--GRAHAM-WALLIER-/ip2/target/surefire/surefirebooter8855188733389628054.jar"/>
+    <property name="surefire.real.class.path" value="/workspaces/ip1--GRAHAM-WALLIER-/ip1/target/surefire/surefirebooter17855913424747577421.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25.0.1+8-LTS"/>
     <property name="user.name" value="vscode"/>
@@ -42,7 +42,7 @@
     <property name="java.vendor.url.bug" value="https://github.com/microsoft/openjdk/issues"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="java.version" value="25.0.1"/>
-    <property name="user.dir" value="/workspaces/ip1--GRAHAM-WALLIER-/ip2"/>
+    <property name="user.dir" value="/workspaces/ip1--GRAHAM-WALLIER-/ip1"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="native.encoding" value="UTF-8"/>
@@ -55,19 +55,19 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="testAddToDiscardPile" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.006"/>
-  <testcase name="testHandRefilled" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
-  <testcase name="testCardInequality" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testAddToDiscardPile" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.005"/>
+  <testcase name="testHandRefilled" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testCardInequality" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
   <testcase name="testCryptocurrencyCardToString" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.004"/>
-  <testcase name="testGetFrameworkCount" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testGetFrameworkCount" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
   <testcase name="testGameEndsWhenFrameworksGone" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
   <testcase name="testTotalDeckSize" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
-  <testcase name="testCalculateAutomationPoints" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
+  <testcase name="testCalculateAutomationPoints" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testPlayGameCompletes" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
-  <testcase name="testExecuteTurn" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
-  <testcase name="testGetAllCards" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testExecuteTurn" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testGetAllCards" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
   <testcase name="testCalculateAutomationPointsInHand" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
-  <testcase name="testSupplyDepletion" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
+  <testcase name="testSupplyDepletion" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testShuffleDrawPile" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testSupplyInitialization" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testGetHand" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
@@ -78,26 +78,26 @@
   <testcase name="testGameInitialization" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testPlayGameHasWinner" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
   <testcase name="testGetCurrentPlayer" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
-  <testcase name="testTakeCard" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
+  <testcase name="testTakeCard" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testDealHandWithReshuffle" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testHasCard" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testGetOtherPlayer" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
   <testcase name="testAutomationCardCreation" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
-  <testcase name="testGameFlowLogic" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testGameFlowLogic" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
   <testcase name="testDifferentGamesHaveDifferentWinners" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
-  <testcase name="testTakeCardNotAvailable" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
+  <testcase name="testTakeCardNotAvailable" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testAddToDrawPile" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
-  <testcase name="testPlayerHandStaysValid" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
-  <testcase name="testPlayerCreation" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
-  <testcase name="testDealHand" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
-  <testcase name="testMultipleGames" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
-  <testcase name="testGameLengthReasonable" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
-  <testcase name="testAutomationCardToString" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
+  <testcase name="testPlayerHandStaysValid" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testPlayerCreation" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testDealHand" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
+  <testcase name="testMultipleGames" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testGameLengthReasonable" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.002"/>
+  <testcase name="testAutomationCardToString" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testGameStarterDeck" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testGetWinner" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
   <testcase name="testCryptocurrencyCardCreation" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
   <testcase name="testCardHashCode" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
-  <testcase name="testGameNotOverInitially" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.001"/>
-  <testcase name="testSupplyToString" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.005"/>
+  <testcase name="testGameNotOverInitially" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
+  <testcase name="testSupplyToString" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0.006"/>
   <testcase name="testCardEquality" classname="edu.brandeis.cosi103a.ip1.AppTest" time="0"/>
 </testsuite>
